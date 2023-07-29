@@ -5,10 +5,12 @@ document.querySelector('#app').innerHTML = `
   <header class="header container">
     <div class="header__title">
       <h1>Social Media Dashboard</h1>
-      Total Followers: 23,004
+      <span class="header__subtitle">Total Followers: 23,004</span>
     </div>
     <fieldset aria-label= "theme toggle" role="radiogroup" class="header__toggle toggle">
       <label for="switch-dark">Dark Mode</label>
+      <label for="switch-system">System</label>
+      <label for="switch-light">Light</label>
 
       <div class="toggle__wrapper">
         <input type="radio" name="theme" id="switch-dark">
@@ -18,8 +20,7 @@ document.querySelector('#app').innerHTML = `
         <span aria-hidden="true" class="toggle__background"></span>
         <span aria-hidden="true" class="toggle__switcher"></span>
       </div>
-      <label for="switch-system">System Pref</label>
-      <label for="switch-light">Light</label>
+
     </fieldset>
   </header>
   <main>

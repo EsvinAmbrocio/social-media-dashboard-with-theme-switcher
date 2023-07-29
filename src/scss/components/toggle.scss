@@ -1,13 +1,44 @@
 @use '../util' as *;
 
+// https://codepen.io/renddrew/pen/bRomab?editors=1100
+
 .toggle {
   border: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 24px);
+  gap: rem(12);
+
+  label {
+    &[for=switch-dark]{
+      grid-column: 1 / 2;
+    }
+    &[for=switch-system]{
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      justify-self: center;
+    }
+    &[for=switch-light]{
+      grid-column: 3 / 4;
+    }
+  }
   &__wrapper {
+    position: relative;
+    height: rem(24);
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
   }
   &__background {
-
+    background: linear-gradient(225deg, var(--toggle-bg-end) 0%, var(--toggle-bg-start) 98.02%);
+    height: 100%;
+    border-radius: rem(12);
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0;
   }
-  input[type="radio"] {
+  input[type='radio'] {
+    opacity: 0;
 
   }
   &__switcher {
@@ -15,8 +46,5 @@
     height: rem(16);
     border-radius: 50%;
     background-color: var(--toggle);
-  }
-  label {
-
   }
 }
